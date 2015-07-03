@@ -9,3 +9,6 @@ RUN apt-get update && apt-get install -y \
 
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 ADD my.cnf /etc/mysql/
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
